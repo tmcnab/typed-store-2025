@@ -1,17 +1,16 @@
 import { useMemo, useState } from 'react'
-import Collections from './Collections'
-import Console from './Console'
-import Documentation from './Documentation'
-import FeatherIcon from 'feather-icons-react'
-import Flex from './Flex'
-import Home from './Home'
-import Button from './Button'
+import Button from './components/Button'
+import Console from './tabs/Console'
+import Documentation from './tabs/Documentation'
+import Flex from './components/Flex'
+import Home from './tabs/Home'
+import System from './tabs/System/System'
 
 const lookup = new Map([
-	['collections', Collections],
 	['console', Console],
 	['documentation', Documentation],
 	['home', Home],
+	['system', System],
 ])
 
 export default function Application() {
@@ -33,7 +32,7 @@ export default function Application() {
 				<Flex>
 					<Button icon='home' name='home' onClick={onClick} title='Home' />
 					<Button icon='book' name='documentation' onClick={onClick} title='Documentation' />
-					<Button icon='database' name='collections' onClick={onClick} title='Collections' />
+					<Button icon='database' name='system' onClick={onClick} title='System' />
 					<Button icon='terminal' name='console' onClick={onClick} title='Console' />
 					<Button icon='github'>
 						<a href='https://github.com/tmcnab/typed-store' title='GitHub Repository' />

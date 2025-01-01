@@ -6,7 +6,7 @@ export interface ButtonProps {
 	icon: string
 	name?: string
 	onClick?: (name: string) => void
-	title?: string
+	title?: string,
 }
 
 export default function Button ({ children, icon, name, onClick }: ButtonProps) {
