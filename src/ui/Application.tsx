@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react'
 import Button from './components/Button'
-import Console from './tabs/Console'
+import Console from './tabs/Console/Console'
 import Documentation from './tabs/Documentation'
 import Flex from './components/Flex'
 import Home from './tabs/Home'
-import System from './tabs/System/System'
+import Types from './tabs/System/Types'
 
 const lookup = new Map([
 	['console', Console],
 	['documentation', Documentation],
 	['home', Home],
-	['system', System],
+	['system', Types],
 ])
 
 export default function Application() {
