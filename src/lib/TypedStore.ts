@@ -1,14 +1,4 @@
-type TypeDefinitionMember = {
-	name: string
-	nullable: boolean
-	type: 'boolean' | 'numeric' | 'text'
-}
-
-type TypeDefinition = {
-	description?: string
-	members: TypeDefinitionMember[]
-	name: string
-}
+import { TypeDefinition } from './TypeDefinition'
 
 class TypedStore extends EventTarget
 {

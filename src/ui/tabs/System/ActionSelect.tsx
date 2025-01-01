@@ -1,11 +1,23 @@
-export const ActionSelect = () => {
+import { ChangeEventHandler } from 'react'
+
+export interface ActionSelectProps {
+	onChange: (value: string) => void
+}
+
+export const ActionSelect = (props: ActionSelectProps) => {
+	const onChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
+		const value = event.target.value
+		console.log('ActionSelect::onChange', value)
+		props.onChange(value)
+	}
+
 	return (
-		<select style={{ width: '100%' }}>
-			<option>&hellip;</option>
-			<option value='view-definition'>
+		<select onChange={onChange} style={{ width: '100%' }}>
+			<option disabled></option>
+			<option disabled>
 				View Definition
 			</option>
-			<option value='view-data'>
+			<option disabled>
 				View Data
 			</option>
 			<option disabled>Add Record</option>
