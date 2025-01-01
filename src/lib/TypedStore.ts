@@ -10,7 +10,6 @@ type TypeDefinition = {
 	name: string
 }
 
-
 class TypedStore extends EventTarget
 {
 	#typeDefinitions: Set<TypeDefinition> = new Set<TypeDefinition>()
@@ -22,20 +21,6 @@ class TypedStore extends EventTarget
 
 	types () {
 		return Array.from(this.#typeDefinitions.values())
-	}
-
-	// EventTarget Overrides
-
-	addEventListener(type: string, callback: EventListenerOrEventListenerObject | null, options?: AddEventListenerOptions | boolean): void {
-		
-	}
-
-	dispatchEvent(event: Event): boolean {
-		
-	}
-
-	removeEventListener(type: string, callback: EventListenerOrEventListenerObject | null, options?: EventListenerOptions | boolean): void {
-		
 	}
 }
 

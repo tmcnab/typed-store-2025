@@ -32,6 +32,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	padding: 1rem;
 }
 
 button {
@@ -52,14 +53,7 @@ fieldset {
 }
 
 h1 {
-	font-size: 1rem;
-	padding-left: 1rem;
-}
-
-header {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
+	font-size: 1.75rem;
 }
 
 legend {
@@ -69,11 +63,7 @@ legend {
 }
 
 main {
-	padding: 1rem;
-}
-
-nav {
-	padding: 1rem;
+	margin-top: 1rem;
 }
 
 table {
