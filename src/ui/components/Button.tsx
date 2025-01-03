@@ -5,7 +5,7 @@ export interface ButtonProps {
 	children?: ReactNode
 	icon?: string
 	name?: string
-	onClick?: (name: string) => void
+	onClick?: (name?: string) => void
 	title?: string,
 }
 
@@ -16,7 +16,7 @@ const style = {
 
 export default function Button ({ children, icon, name, onClick }: ButtonProps) {
 	return (
-		<button onClick={onClick && name ? () => onClick(name) : undefined} style={style}>
+		<button onClick={onClick ? () => onClick(name) : undefined} style={style}>
 			{icon ? <FeatherIcon icon={icon} /> : null}
 			{children}
 		</button>

@@ -5,12 +5,15 @@ import Button from '../../components/Button'
 import FeatherIcon from 'feather-icons-react'
 import Flex from '../../components/Flex'
 import { sortBy } from 'lodash'
+import { Nullable } from '../../../lib/Nullable'
+import LoadExampleButton from './LoadExampleButton'
+import CreateTypeButton from './CreateType'
 
 interface TableItem {
 	builtin: boolean,
-	count: number | null,
+	count: Nullable<number>,
 	name: string,
-	size: number | null,
+	size: Nullable<number>,
 }
 
 function formatData () : TableItem[] {
@@ -30,12 +33,14 @@ export default function Types() {
 
 	const data: TableItem[] = formatData()
 	
+	const onChange = () => { /*TODO*/ }
+	
 	return (
 		<fieldset>
 			<legend>Types</legend>
 			<Flex justify>
-				<Button>New Type</Button>
-				<Button>Load Example</Button>
+				<CreateTypeButton />
+				<LoadExampleButton />
 			</Flex>
 			<table>
 				<thead>
@@ -43,7 +48,7 @@ export default function Types() {
 						<th>Builtin</th>
 						<th>Name</th>
 						<th>Count</th>
-						<th>Size (B)</th>
+						<th>Size</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -54,7 +59,7 @@ export default function Types() {
 							<td>{item.name}</td>
 							<td>{item.count?.toLocaleString()}</td>
 							<td>{item.size?.toLocaleString().replaceAll(',', ' ')}</td>
-							<td>{item.builtin ? null : <ActionSelect />}</td>
+							<td>{item.builtin ? null : <ActionSelect onChange={onChange} />}</td>
 						</tr>
 					)}
 				</tbody>

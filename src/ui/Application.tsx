@@ -4,13 +4,13 @@ import Console from './tabs/Console/Console'
 import Documentation from './tabs/Documentation'
 import Flex from './components/Flex'
 import Home from './tabs/Home'
-import Types from './tabs/System/Types'
+import Types from './tabs/Types/Types'
 
 const lookup = new Map([
 	['console', Console],
 	['documentation', Documentation],
 	['home', Home],
-	['system', Types],
+	['types', Types],
 ])
 
 export default function Application() {
@@ -32,10 +32,10 @@ export default function Application() {
 				<Flex>
 					<Button icon='home' name='home' onClick={onClick} title='Home' />
 					<Button icon='book' name='documentation' onClick={onClick} title='Documentation' />
-					<Button icon='database' name='system' onClick={onClick} title='System' />
+					<Button icon='database' name='types' onClick={onClick} title='Types' />
 					<Button icon='terminal' name='console' onClick={onClick} title='Console' />
 					<Button icon='github'>
-						<a href='https://github.com/tmcnab/typed-store' title='GitHub Repository' />
+						<a href='https://github.com/tmcnab/typed-store-2025' title='GitHub Repository' />
 					</Button>
 				</Flex>
 			</Flex>
