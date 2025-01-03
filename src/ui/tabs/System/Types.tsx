@@ -1,13 +1,35 @@
 import './Types.css'
 import { ActionSelect } from './ActionSelect'
-import { useData } from './useData'
+import { TypeDefinition } from '../../../lib/TypeDefinition'
 import Button from '../../components/Button'
 import FeatherIcon from 'feather-icons-react'
 import Flex from '../../components/Flex'
+import { sortBy } from 'lodash'
+
+interface TableItem {
+	builtin: boolean,
+	count: number | null,
+	name: string,
+	size: number | null,
+}
+
+function formatData () : TableItem[] {
+	const types = window.typedStore.types()
+
+	const items = types.map((item: TypeDefinition) => ({
+		builtin: true,
+		count: null,
+		name: item.name,
+		size: null,
+	})) as TableItem[]
+
+	return sortBy(items, 'name')
+}
 
 export default function Types() {
-	const data = useData()
 
+	const data: TableItem[] = formatData()
+	
 	return (
 		<fieldset>
 			<legend>Types</legend>
