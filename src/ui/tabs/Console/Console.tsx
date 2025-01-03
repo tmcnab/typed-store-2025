@@ -6,7 +6,6 @@ export default function Console() {
 	const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
 		event.preventDefault()
 		console.log('Console::onSubmit', event.currentTarget.name)
-		if (event.currentTarget.value)
 	}
 
 	return (
