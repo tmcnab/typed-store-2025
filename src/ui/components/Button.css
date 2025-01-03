@@ -1,20 +1,17 @@
 button {
 	align-items: center;
 	background-color: transparent;
-	border-color: black;
-	border-style: solid;
-	border-width: 1px;
 	color: black;
 	cursor: pointer;
 	display: 'flex';
 	justify-content: center;
 	padding: 0.25rem;
+	border: none;
 }
 
 @media (prefers-color-scheme: dark) {
 	button {
 		color: white;
-		border-color: white;
 	}
 }
 

@@ -3,10 +3,10 @@ import { ActionSelect } from './ActionSelect'
 import { formatData } from './formatData'
 import { TableItem } from './TableItem'
 import CreateTypeButton from './CreateType'
-import DefinitionDialogButton from './DefinitionDialogButton'
 import FeatherIcon from 'feather-icons-react'
 import Flex from '../../components/Flex'
 import LoadExampleButton from './LoadExampleButton'
+import TypeDialog from './dialog/TypeDialog/TypeDialog'
 
 export default function Types()
 {
@@ -14,8 +14,7 @@ export default function Types()
 	
 	const onChange = (value) => { 
 		console.log('Types::onChange', value)
-
-	 }
+	}
 	
 	return (
 		<>
