@@ -11,10 +11,10 @@ export const ActionSelect = (props: ActionSelectProps) =>
 	return (
 		<Flex>
 			<DefinitionDialogButton name={props.name} />
-			<Button icon='grid' />
-			<Button icon='plus' />
-			<Button icon='upload' />
-			<Button icon='trash' />
+			<Button disabled icon='grid' />
+			<Button disabled icon='plus' />
+			<Button disabled icon='upload' />
+			<Button disabled icon='trash' />
 		</Flex>
 	)
 }

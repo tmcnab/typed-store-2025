@@ -13,7 +13,6 @@ export default function DefinitionDialogButton (props: DefinitionDialogButtonPro
 	const [open, setOpen] = useState<boolean>(false)
 
 	const definition = first(getStore().types().filter(i => i.name === props.name)) as TypeDefinition
-	console.log(definition)
 
 	return (
 		<>
