@@ -17,7 +17,7 @@ export const ProductDefinition: TypeDefinition = {
 		nullable: false,
 		type: 'text',
 	}],
-	name: 'Product',
+	name: 'product',
 	description: 'Something you can sell to a person',
 }
 
