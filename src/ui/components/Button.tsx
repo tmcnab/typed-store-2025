@@ -1,3 +1,4 @@
+import './Button.css'
 import { ReactNode } from 'react'
 import FeatherIcon from 'feather-icons-react'
 
@@ -10,14 +11,9 @@ export interface ButtonProps {
 	title?: string,
 }
 
-const style = {
-	cursor: 'pointer',
-	padding: '0.25rem 0.5rem 0.25rem 0.5rem',
-}
-
 export default function Button ({ children, disabled, icon, name, onClick }: ButtonProps) {
 	return (
-		<button disabled={disabled} onClick={onClick ? () => onClick(name) : undefined} style={style}>
+		<button disabled={disabled} onClick={onClick ? () => onClick(name) : undefined}>
 			{icon ? <FeatherIcon icon={icon} /> : null}
 			{children}
 		</button>

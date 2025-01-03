@@ -16,6 +16,11 @@ export const PersonDefinition: TypeDefinition = {
 		name: 'name',
 		nullable: false,
 		type: 'text',
+	}, {
+		description: 'The email of the person',
+		name: 'email',
+		nullable: false,
+		type: 'email',
 	}],
 	name: 'person',
 	description: 'A human being that can buy or sell products',

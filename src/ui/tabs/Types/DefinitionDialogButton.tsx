@@ -1,3 +1,4 @@
+import './DefinitionDialogButton.css'
 import { first } from 'lodash'
 import { TypeDefinition } from '../../../lib/TypeDefinition'
 import { useState } from 'react'
@@ -18,6 +19,7 @@ export default function DefinitionDialogButton (props: DefinitionDialogButtonPro
 		<>
 			<Button icon='eye' onClick={() => setOpen(true)} />
 			<Dialog onClose={() => setOpen(false)} open={open} title={`${props.name} Definition`}>
+				<blockquote>{definition.description}</blockquote>
 				<table>
 					<thead>
 						<tr>

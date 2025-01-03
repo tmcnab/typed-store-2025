@@ -1,6 +1,15 @@
+pre {
+	min-height: 40ch;
+}
+
 textarea {
 	border: none;
-	resize: vertical;
-	width: 100%;
 	outline: none;
+	resize: none;
+}
+
+pre, section, textarea {
+	padding: 1ch;
+	width: 100%;
+	background-color: #FFFFFF0F;
 }

@@ -1,0 +1,11 @@
+td:first-child {
+	width: 5vw;
+}
+
+td:nth-child(2) {
+	text-align: left;
+}
+
+td:last-child {
+	width: 20vw;
+}

@@ -35,11 +35,6 @@ body {
 	padding: 1rem;
 }
 
-button a {
-	color: white;
-	text-decoration: none;
-}
-
 fieldset {
 	display: flex;
 	flex-direction: column;

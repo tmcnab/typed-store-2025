@@ -6,5 +6,5 @@ export default function LoadExampleButton () {
 		window.typedStore = createTypedStore()
 	}
 
-	return <Button icon='coffee' onClick={onClick} title='Load Example' />
+	return <Button disabled icon='coffee' onClick={onClick} title='Load Example' />
 }
