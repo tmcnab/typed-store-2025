@@ -1,28 +1,20 @@
-import { ChangeEventHandler } from 'react'
+import Button from '../../components/Button'
+import DefinitionDialogButton from './DefinitionDialogButton'
+import Flex from '../../components/Flex'
 
 export interface ActionSelectProps {
-	onChange: (value: string) => void
+	name: string
 }
 
-export const ActionSelect = (props: ActionSelectProps) => {
-	const onChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-		const value = event.target.value
-		console.log('ActionSelect::onChange', value)
-		props.onChange(value)
-	}
-
+export const ActionSelect = (props: ActionSelectProps) => 
+{
 	return (
-		<select onChange={onChange} style={{ width: '100%' }}>
-			<option disabled></option>
-			<option disabled>
-				View Definition
-			</option>
-			<option disabled>
-				View Data
-			</option>
-			<option disabled>Add Record</option>
-			<option disabled>Upload Records</option>
-			<option disabled>Destroy Collection</option>
-		</select>
+		<Flex>
+			<DefinitionDialogButton name={props.name} />
+			<Button icon='grid' />
+			<Button icon='plus' />
+			<Button icon='upload' />
+			<Button icon='trash' />
+		</Flex>
 	)
 }

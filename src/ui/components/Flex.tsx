@@ -11,7 +11,7 @@ export default function Flex ({ alignTop, children, justify, vertical }: FlexPro
 	const props = {
 		children,
 		style: {
-			alignItems: alignTop ? 'top' : undefined,
+			alignItems: alignTop ? 'top' : 'center',
 			display: 'flex',
 			flexDirection: vertical ? 'column' : undefined,
 			gap: '0.5rem',

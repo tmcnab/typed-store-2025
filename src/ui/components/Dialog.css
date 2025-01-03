@@ -1,0 +1,21 @@
+dialog {
+	height: 80vh;
+	left: 10vw;
+	top: 10vh;
+	width: 80vw;
+	text-align: left;
+}
+
+dialog::backdrop {
+	background-color: lightblue;
+}
+
+dialog > header {
+	padding: 1rem;
+}
+
+table {
+	td, th {
+		text-align: center;
+	}
+}
