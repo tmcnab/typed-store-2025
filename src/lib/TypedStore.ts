@@ -1,6 +1,7 @@
+import { Nullable } from './Nullable'
 import { TypeDefinition } from './TypeDefinition'
 
-class TypedStore
+export default class TypedStore
 {
 	#typeDefinitions: Set<TypeDefinition> = new Set<TypeDefinition>([
 		{ members: [], name: 'boolean', description: 'a true or false value' },
@@ -9,9 +10,28 @@ class TypedStore
 		{ members: [], name: 'numeric', description: 'a number between ±∞ winth arbitrary precision' },
 	])
 
+	#data: Map<string, Set<object>> = new Map<string, Set<object>>([])
+
+	#hasType = (name: string) => {
+		let found = false
+		this.#typeDefinitions.forEach(item => {
+			if (item.name === name) {
+				found = true
+			}
+		})
+		return found
+	}
+
 	addType (value: TypeDefinition) {
-		console.log('TypedStore.prototype.addType', value)	// TODO: use a logger instead
-		this.#typeDefinitions.add(value)					// TODO maybe clone and freeze?
+		if (!this.#hasType(value.name)) {
+			this.#typeDefinitions.add(value)					// TODO maybe clone and freeze?
+			this.#data.set(value.name, new Set())
+		}
+	}
+
+	size (name: string) : Nullable<number> {
+		const value = this.#data.get(name)?.size
+		return Number.isInteger(value) ? value as number : null
 	}
 
 	types () {
@@ -19,4 +39,3 @@ class TypedStore
 	}
 }
 
-export default Object.seal(TypedStore)

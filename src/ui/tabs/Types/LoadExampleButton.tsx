@@ -1,8 +1,9 @@
+import { createTypedStore } from '../../../example/createTypedStore'
 import Button from '../../components/Button'
 
 export default function LoadExampleButton () {
 	const onClick = () => {
-		console.log('load it')
+		window.typedStore = createTypedStore()
 	}
 
 	return <Button icon='coffee' onClick={onClick} title='Load Example' />
